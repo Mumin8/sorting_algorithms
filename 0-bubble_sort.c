@@ -1,21 +1,29 @@
 #include "sort.h"
+void swap(int *small, int *big, size_t, int *);
+
 /**
  *  bubble_sort - the sort function
  *
  *  @array: the array to sort
  *  @size: the size of the array
  */
-void swap(int *small, int *big, size_t, int *);
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 
-	if (size < 2)
+	if (array == NULL || size == NULL)
 		return;
+
 	for (i = 0; i < size; i++)
-		for(j = 1; j < size; j++)
-			if (array[j - 1] >= array[j])
+	{
+		for (j = 1; j < size; j++)
+		{
+			if (array[j] < array[j - 1])
+			{
 				swap(&array[j - 1], &array[j], size, array);
+			}
+		}
+	}
 }
 
 
