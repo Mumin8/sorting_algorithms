@@ -37,8 +37,11 @@ void bubble_sort(int *array, size_t size)
  */
 void swap(int *small, int *big, size_t n, int *array)
 {
-	int tmp = *big;
+	int tmp;
+	
+	tmp = *big;
 	*big = *small;
 	*small = tmp;
+	
 	print_array(array, n);
 }
