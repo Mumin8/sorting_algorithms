@@ -8,8 +8,9 @@ int knuth_number(size_t size);
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t i, j, gap;	
-	int tmp;	
+	size_t i, j, gap;
+	int tmp;
+
 	gap = knuth_number(size);
 
 	while (gap >= 1)
@@ -29,7 +30,7 @@ void shell_sort(int *array, size_t size)
 }
 
 /**
- * the function to calculate the knuth gap
+ * knuth_number - the function to calculate the knuth gap
  *
  * @size: the size of the array whose gap is to be determined
  *
@@ -38,10 +39,10 @@ void shell_sort(int *array, size_t size)
 int knuth_number(size_t size)
 {
 	size_t gap = 0;
-	
+
 	while (gap < size)
 	{
-		gap = gap * 3 + 1;	
+		gap = gap * 3 + 1;
 	}
 	return (gap /= 3);
 }
